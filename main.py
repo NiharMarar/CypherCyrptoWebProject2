@@ -1,3 +1,5 @@
+#This is our main.py, this file starts the web server
+
 #Import
 from flask import Flask, render_template
 
