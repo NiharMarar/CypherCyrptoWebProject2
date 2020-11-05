@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .button {
+        border: none;
+         color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+     }
+     .button1 {background-color: #4CAF50;}
+     .button2 {background-color: #008CBA;}
+</style>
+</head>
+<body>
+    <input id="bin1" value="Write Message Here">
+    <button class = "button button1" onclick = "encrypt()">Encrypt</button>
+    <button class = "button button2" onclick = "decrypt()">Decrypt</button>
+    <input id="bin2"/>
+    <script>
+        function encrypt() {
+            var output = document.getElementById("bin2");
+            var input = document.getElementById("bin1").value;
+            output.value = "";
+            for (var i = 0; i < input.length; i++) {
+                output.value += input[i].charCodeAt(0).toString(2) + " ";
+            }
+        }
+    </script>
+</body>
+</html>
