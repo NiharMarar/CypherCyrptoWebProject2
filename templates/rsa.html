@@ -2,49 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>rsa</title>
-    <link href="rsastyle.css" rel="stylesheet" type="text/css">
+    <title>Cipher Crypto RSA</title>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'styles/rsa.css') }}">
 </head>
 <body>
 
-<nav>
-    <p>Cipher Crypto</p>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Binary</a>
-            <ul>
-                <li><a href="#">Encryption</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Caesar Cipher</a>
-            <ul>
-                <li><a href="#">Encryption</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </li>
-        <li><a href="#">RSA</a>
-            <ul>
-                <li><a href="#">Encryption</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Resources</a>
-            <ul>
-                <li><a href="#">Project Scope</a></li>
-                <li><a href="#">Github</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+<!-- loads base.html template -->
+{% extends "base.html" %}
 
-<func>
-    <ui>
-        <li><a href="#">Encrypt</a></li>
-        <li><a href="#">Encrypt/Key Generator</a></li>
-        <li><a href="#">Decrypt</a></li>
-    </ui>
-</func>
+<!-- rsa page content -->
+{% block content %}
+<ul>
+    <li>{{ links.index }}</li>
+    <li>{{ links.rsa }}</li>
+    <li>{{ links.resources }}</li>
+    <li>{{ links.test }}</li>
+</ul>
+{% endblock %}
 
 </body>
 </html>
