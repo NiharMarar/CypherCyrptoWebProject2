@@ -1,24 +1,30 @@
-#This is our main.py, this file starts the web server
-
-#Import
+#import "Flask"
 from flask import Flask, render_template
 
-#Create Flask
+#create "Flask"
 app = Flask(__name__)
+
+#links dictionary
+links = {
+    'index': 'Home',
+    'rsa': "RSA",
+    'resources': 'GitHub',
+    'test': 'test'}
 
 #home
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
-#RSA Demonstration Page
+#rsa demonstration
 @app.route('/rsa')
-def rsaEx():
-    return render_template('rsa.html')
-#RSA Info Page
+def rsaEX():
+    return render_template("rsa.html", links = links)
+#rsa info
 @app.route('/rsa/about')
 def rsaAbout():
-    return render_template('rsaAbout.html')
+    return render_template("rsaAbout.html")
 
+#run file
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host = '0.0.0.0', debug = True)
