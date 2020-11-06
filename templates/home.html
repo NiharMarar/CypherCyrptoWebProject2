@@ -20,6 +20,18 @@
 </style>
 </head>
 <body>
+
+    {% extends "base.html" %}
+
+    {% block content %}
+    <ul>
+        <li>{{ links.index }}</li>
+        <li>{{ links.rsa }}</li>
+        <li>{{ links.resources }}</li>
+        <li>{{ links.test }}</li>
+    </ul>
+    {% endblock %}
+
     <input id="bin1" value="Write Message Here">
     <button class = "button button1" onclick = "encrypt()">Encrypt</button>
     <button class = "button button2" onclick = "decrypt()">Decrypt</button>
