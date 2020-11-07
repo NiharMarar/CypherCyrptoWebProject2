@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- creates the looks of the buttons -->
     <style>
     .button {
         border: none;
@@ -15,14 +17,17 @@
         margin: 4px 2px;
         cursor: pointer;
      }
+
      .button1 {background-color: #4CAF50;}
      .button2 {background-color: #008CBA;}
 </style>
 </head>
 <body>
 
+    <!-- brings in navbar from base.html -->
     {% extends "base.html" %}
 
+    <!-- incorporates the links in the navbar -->
     {% block content %}
     <ul>
         <li>{{ links.index }}</li>
@@ -32,13 +37,21 @@
     </ul>
     {% endblock %}
 
+    <!-- Explains what this page does -->
+    <p>Here, you can encrypt or decrypt a binary message. Either put a statement or a binary code on the left text box, selected the button you want to change the message, and the new message will appear in the right text box.</p>
+
+    <!-- user message input -->
     <input id="bin1" value="Write Message Here">
+
+    <!-- shows buttons, gives them functions -->
     <button class = "button button1" onclick = "encrypt()">Encrypt</button>
     <button class = "button button2" onclick = "decrypt()">Decrypt</button>
+
+    <!-- output -->
     <input id="bin2"/>
     <script>
 
     </script>
-    <p>Hello World</p>
+
 </body>
 </html>
