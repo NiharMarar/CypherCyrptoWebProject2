@@ -16,6 +16,11 @@ links = {
 def home():
     return render_template("index.html")
 
+#binary game
+@app.route('/binary')
+def binaryEX():
+    return render_template("home.html", links = links
+                           )
 #rsa demonstration
 @app.route('/rsa')
 def rsaEX():
