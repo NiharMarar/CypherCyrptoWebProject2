@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <!-- creates the looks of the buttons -->
     <style>
+    body {background-color: pink;}
+    h1 {color: blue;}
+    p {
+        color: purple;
+        font-size: 150%}
+
     .button {
         border: 1px solid black;
          color: white;
@@ -26,34 +30,32 @@
 </head>
 <body>
 
-    <!-- brings in navbar from base.html -->
-    {% extends "base.html" %}
+<!-- brings in navbar from base.html -->
 
-    <!-- incorporates the links in the navbar -->
-    {% block content %}
-    <ul>
-        <li>{{ links.index }}</li>
-        <li>{{ links.rsa }}</li>
-        <li>{{ links.resources }}</li>
-        <li>{{ links.test }}</li>
-    </ul>
-    {% end block %}
 
-    <!-- Explains what this page does -->
-    <p>Here, you can encrypt or decrypt a binary message. Either put a statement or a binary code in the left text box, selected the button you want to change the message, and the new message will appear in the right text box.</p>
+<!-- incorporates the links in the navbar -->
 
+
+<!-- Explains what this page does -->
+<p>Here, you can encrypt or decrypt a binary message. Either put a statement or a binary code in the text box, selected the button you want to change the message, and the new message will appear. There are a couple rules:</p>
+<p>1. Do not use spaces in you messages</p>
+<p>2. DO NOT press the wrong button when encrypting or decrypting (ex: don't press the decrypt button when you did not put in a binary code)</p>
+
+<form method = "post">
     <!-- user message input -->
-    <input id="bin1" value="Write Message Here">
+    <p><input class="textbox1" name="bin1" required> </p>
 
     <!-- shows buttons, gives them functions -->
-    <button class = "button button1" onclick = "encrypt()">Encrypt</button>
-    <button class = "button button2" onclick = "decrypt()">Decrypt</button>
+    <p><button class = "button button1" formaction = "/encrypt">Encrypt</button><button class = "button button2" formaction = "/decrypt">Decrypt</button></p>
+
 
     <!-- output -->
-    <input id="bin2"/>
-    <script>
+    <p class="output">{{ display }}</p>
 
-    </script>
+</form>
+<script>
+
+</script>
 
 </body>
 </html>
