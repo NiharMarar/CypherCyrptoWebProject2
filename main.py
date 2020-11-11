@@ -11,10 +11,21 @@ links = {
     'resources': 'GitHub',
     'test': 'test'}
 
+def Binary_to_Text(binary):
+
+    binary1 = binary
+    decimal, d, n = 0, 0 , 0
+    while (binary != 0):
+        deci = binary % 10
+        decimal = decimal + deci * pow(2, d)
+        binary = binary//10
+        d += 1
+    return(decimal)
+
 #home
 @app.route('/')
 def home():
-    return render_template("Index2.0.html")
+    return render_template("homepage.html")
 
 #binary game
 @app.route('/binary')
@@ -28,6 +39,10 @@ def rsaEX():
 @app.route('/rsa/about')
 def rsaAbout():
     return render_template("rsaAbout.html")
+#CeaserCipher game
+@app.route('/CeaserCipher')
+def CeaserCipherEX():
+    return render_template("CeaserCipher.html", links = links)
 
 @app.route("/bin_encrypt", methods=['GET','POST'])
 def encryption():
@@ -42,16 +57,6 @@ def encryption():
 def decryption():
     if request.method == 'POST':
         form = request.form
-        def Binary_to_Text(binary):
-
-            binary1 = binary
-            decimal, d, n = 0, 0 , 0
-            while (binary != 0):
-                deci = binary % 10
-                decimal = decimal + deci * pow(2, d)
-                binary = binary//10
-                d += 1
-            return(decimal)
         B_text = form["bin1"]
         string = ' '
         for d in range(0, len(B_text), 7):
@@ -63,4 +68,4 @@ def decryption():
 
 #run file
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', debug = True)
+    app.run(host = '127.0.0.1', debug = True)
