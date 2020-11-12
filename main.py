@@ -31,7 +31,7 @@ def home():
 #binary game
 @app.route('/binary')
 def binaryEX():
-    return render_template("home.html", links = links)
+    return render_template("Binary.html", links = links)
 
 #rsa demonstration
 #default RSA (rsa encrypt)
@@ -70,7 +70,7 @@ def encryption():
         form = request.form
         B_text = form["bin1"]
         result = ''.join(format(ord(i), 'b') for i in B_text)
-        return render_template("home.html", display = result)
+        return render_template("Binary.html", display = result)
     return redirect("/home")
 
 #runs Binary Game decryption
@@ -84,7 +84,7 @@ def decryption():
             temporary = int(B_text[d:d + 7])
             decimal_data = Binary_to_Text(temporary)
             string = string + chr(decimal_data)
-        return render_template("home.html", display = string)
+        return render_template("Binary.html", display = string)
     return redirect("/home")
 
 #run file
