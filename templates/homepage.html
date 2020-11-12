@@ -8,36 +8,11 @@
 
 </head>
 <body class="bg">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">ProjectCC</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="nav-link dropdown-link" href="#">Home</a>
-    <div class="dropdown-mine">
-        <span>Caesar Cipher</span>
-        <div class="dropdown-content-mine">
-            <a class="dropdown-link" href="#"><span>Information</span></a>
-            <a class="dropdown-link" href="#"><span>Cipher</span></a>
-        </div>
-    </div>
-    <div class="nav-link dropdown-link dropdown-mine">
-        <span>Binary</span>
-        <div class="dropdown-content-mine">
-            <a class="dropdown-link" href="#"><span>Information</span></a>
-            <a class="dropdown-link" href="#"><span>Cipher</span></a>
-        </div>
-    </div>
-    <div class="dropdown-mine">
-        <span>RSA</span>
-        <div class="dropdown-content-mine">
-            <a class="dropdown-link" href="#"><span>Information</span></a>
-            <a class="dropdown-link" href="#"><span>Cipher</span></a>
-        </div>
-    </div>
-</nav>
-<center><h1 class="headertitle">CipherCrypto</h1></center>
+{% extends "base.html" %}
 
+{% block content %}
+<center><h1 class="headertitle">CipherCrypto</h1></center>
+{% endblock %}
 
 </body>
 </html>

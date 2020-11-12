@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Cipher Crypto RSA</title>
-    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'styles/rsa.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
 </head>
 <body>
 
@@ -12,12 +13,22 @@
 
 <!-- rsa page content -->
 {% block content %}
-<ul>
-    <li>{{ links.index }}</li>
-    <li>{{ links.rsa }}</li>
-    <li>{{ links.resources }}</li>
-    <li>{{ links.test }}</li>
-</ul>
+<form action = "#" method = "post">
+    <!-- message -->
+    <p>Message: </p>
+    <p><input type = "text" name = "msg" /></p>
+    <!-- public key 1 -->
+    <p>Public Key 1: </p>
+    <p><input type = "text" name = "pubKey1" /></p>
+    <!-- public key 2 -->
+    <p>Public Key 2</p>
+    <p><input type = "text" name = "pubKey2" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+    <!-- encrypted message -->
+    <p>Encrypted: </p>
+    <p class = output>{{ output }}</p>
+
+</form>
 {% endblock %}
 
 </body>

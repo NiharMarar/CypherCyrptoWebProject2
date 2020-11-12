@@ -1,5 +1,6 @@
-#import "Flask"
-from flask import Flask, render_template, url_for, request, redirect
+#imports
+from flask import Flask, render_template, request, redirect
+import rsa
 
 #create "Flask"
 app = Flask(__name__)
@@ -31,14 +32,32 @@ def home():
 @app.route('/binary')
 def binaryEX():
     return render_template("home.html", links = links)
+
 #rsa demonstration
-@app.route('/rsa')
-def rsaEX():
-    return render_template("rsa.html", links = links)
+#default RSA (rsa encrypt)
+@app.route ("/rsa", methods = ["POST", "GET"])
+def rsaEncrypt ():
+    if request.method == "POST":
+        #get message
+        message = request.form["msg"]
+        #get keys
+        pubKey1 = int(request.form["pubKey1"])
+        pubKey2 = int(request.form["pubKey2"])
+        #get encrypted and make into useable output
+        encrypted = str(rsa.rsa(message, pubKey1, pubKey2))
+        encrypted = ''.join(encrypted)
+        #render page with output
+        return render_template ("rsa.html", output = encrypted)
+    #render page without output
+    else:
+        return render_template ("rsa.html")
+
+
 #rsa info
 @app.route('/rsa/about')
 def rsaAbout():
     return render_template("rsaAbout.html")
+
 #CeaserCipher game
 @app.route('/CeaserCipher')
 def CeaserCipherEX():

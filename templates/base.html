@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='rsa.css') }}">
 </head>
 <body>
-
-<!-- navbar -->
-<nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
-    <a href = "#" class = "navbar-brand">Cipher Crypto</a>
-    <!-- make navbar horizontal -->
-    <div class = "collapse navbar-collapse">
-        <!-- navbar contents -->
-        <ul class = "navbar-nav mr-auto">
-            <li class = "nav-item"><a href = "/" class = "nav-link">Home</a></li>
-            <li class = "nav-item"><a href = "#" class = "nav-link">Binary</a></li>
-            <li class = "nav-item"><a href = "#" class = "nav-link">Caesar Cipher</a></li>
-            <li class = "nav-item"><a href = "rsa" class = "nav-link">RSA</a></li>
-            <li class = "nav-item"><a href = "#" class = "nav-link">GitHub</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ProjectCC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="nav-link dropdown-link" href="/">Home</a>
+    <div class="dropdown-mine">
+        <span>Caesar Cipher</span>
+        <div class="dropdown-content-mine">
+            <a class="dropdown-link" href="#"><span>Information</span></a>
+            <a class="dropdown-link" href="#"><span>Cipher</span></a>
+        </div>
     </div>
-
+    <div class="nav-link dropdown-link dropdown-mine">
+        <span>Binary</span>
+        <div class="dropdown-content-mine">
+            <a class="dropdown-link" href="#"><span>Information</span></a>
+            <a class="dropdown-link" href="#"><span>Cipher</span></a>
+        </div>
+    </div>
+    <div class="dropdown-mine">
+        <span>RSA</span>
+        <div class="dropdown-content-mine">
+            <a class="dropdown-link" href="#"><span>Information</span></a>
+            <a class="dropdown-link" href="rsa"><span>Cipher</span></a>
+        </div>
+    </div>
 </nav>
-
+<!-- allows menu bar to be used in other pages w/out copy/paste updating -->
 {% block content %}{% endblock %}
-
 </body>
 </html>
