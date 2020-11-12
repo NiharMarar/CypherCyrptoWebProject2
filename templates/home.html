@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
 
@@ -27,15 +28,16 @@
      .button1 {background-color: #4CAF50;}
      .button2 {background-color: #008CBA;}
 </style>
+
 </head>
 <body>
 
 <!-- brings in navbar from base.html -->
-
+{% extends "base.html" %}
 
 <!-- incorporates the links in the navbar -->
 
-
+{% block content %}
 <!-- Explains what this page does -->
 <p>Here, you can encrypt or decrypt a binary message. Either put a statement or a binary code in the text box, selected the button you want to change the message, and the new message will appear. There are a couple rules:</p>
 <p>1. Do not use spaces in you messages</p>
@@ -53,9 +55,6 @@
     <p class="output">{{ display }}</p>
 
 </form>
-<script>
-
-</script>
-
+{% endblock %}
 </body>
 </html>
