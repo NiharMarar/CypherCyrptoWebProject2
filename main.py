@@ -63,6 +63,7 @@ def rsaAbout():
 def CeaserCipherEX():
     return render_template("CeaserCipher.html", links = links)
 
+#runs Binary Game encryption
 @app.route("/bin_encrypt", methods=['GET','POST'])
 def encryption():
     if request.method == 'POST':
@@ -72,6 +73,7 @@ def encryption():
         return render_template("home.html", display = result)
     return redirect("/home")
 
+#runs Binary Game decryption
 @app.route("/bin_decrypt", methods=['GET','POST'])
 def decryption():
     if request.method == 'POST':
