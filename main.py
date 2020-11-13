@@ -44,7 +44,8 @@ def rsaEncrypt ():
         pubKey1 = int(request.form["pubKey1"])
         pubKey2 = int(request.form["pubKey2"])
         #get encrypted and make into useable output
-        encrypted = str(rsa.rsa(message, pubKey1, pubKey2))
+        encrypted = rsa.rsa(message, pubKey1, pubKey2)
+        encrypted = encrypted[0]
         encrypted = ''.join(encrypted)
         #render page with output
         return render_template ("rsa.html", output = encrypted)
