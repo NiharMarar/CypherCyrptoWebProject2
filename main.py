@@ -71,7 +71,7 @@ def encryption():
         B_text = form["bin1"]
         result = ''.join(format(ord(i), 'b') for i in B_text)
         return render_template("Binary.html", display = result)
-    return redirect("/home")
+    return redirect("/binary")
 
 #runs Binary Game decryption
 @app.route("/bin_decrypt", methods=['GET','POST'])
@@ -85,7 +85,11 @@ def decryption():
             decimal_data = Binary_to_Text(temporary)
             string = string + chr(decimal_data)
         return render_template("Binary.html", display = string)
-    return redirect("/home")
+    return redirect("/binary")
+
+@app.route("/BinaryInfo")
+def BinaryInfo():
+    return render_template("BinInfo.html")
 
 #run file
 if __name__ == "__main__":
