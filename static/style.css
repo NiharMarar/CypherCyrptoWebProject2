@@ -47,6 +47,7 @@ text-decoration: none;
 color:black;
 transition-duration:2s;
 }
+
 .dropdown-link:hover {
 text-decoration: none;
 color:grey;
