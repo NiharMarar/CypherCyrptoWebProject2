@@ -17,6 +17,11 @@
     h {
         color: blue;
         font-size: 250%}
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
 </style>
 </head>
 <body style = "background-color: Plum;">
@@ -33,11 +38,11 @@
 
     <h>References</h>
     <!-- embedding another website -->
-    <iframe src = "https://www.computerhope.com/jargon/b/binary.htm" title = "More Info" width="100%" height = "300" style = "border:1px solid black"></iframe>
+    <iframe src = "https://www.computerhope.com/jargon/b/binary.htm" class="center" title = "More Info" width="75%" height = "350" style = "border:1px solid black"></iframe>
     <h>Coding Binary</h>
     <p>I have made a code with the Python language that encrypts text messages into binary and decrypts binary code to text. To encrypt, I just used the ASCII library that is imported with Python which basically does the converting for me, so it is pretty simple. Decrypting is a little harder because, first I have to split the binary message apart into separate segments, convert those segments into hexadecimal code (basically numbers that are connected to letters), then turn those hexadecimal codes into text. This is my code (p.s. the loading bar is just for show): </p>
     <!-- embedding another website -->
-    <iframe src = "https://repl.it/@GingerTC/Flask-Project-Binary" title = "Python Code" width = "100%" height = "500" style = "border:1px solid black"></iframe>
+    <iframe src = "https://repl.it/@GingerTC/Flask-Project-Binary?lite=true" class="center" title = "Python Code" width = "75%" height = "650" style = "border:1px solid black"></iframe>
     <h>I Hope You Will Play With the Binary Conversion and Learn About the Other Ciphers!</h>
 {% endblock %}
 </body>

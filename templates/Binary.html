@@ -23,10 +23,35 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
      }
 
-     .button1 {background-color: #DC143C;}
-     .button2 {background-color: #20B2AA;}
+     .button1 {
+        background-color: #DC143C;
+     }
+     .button2 {
+        background-color: #20B2AA;
+     }
+
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .textbox1 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+     .output {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
     </style>
 
 </head>
@@ -36,6 +61,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<img width="750" height="300" src="https://miro.medium.com/max/1000/1*lrLtuOpkP2Cng32gEjgtXQ.png" alt="A picture of the Binary" class = "center"/>
+
 <!-- Explains what this page does -->
 <p>Here, you can encrypt or decrypt a binary message. Either put a statement or a binary code in the text box, select the button you want to change the message, and the new message will appear. There are a couple rules:</p>
 <p>1. Do not use spaces in you messages</p>
@@ -43,14 +71,16 @@
 
 <form method = "post">
     <!-- user message input -->
-    <p><input class="textbox1" name="bin1" required> </p>
+    <p><input class="textbox1" name="bin1"  required > </p>
 
     <!-- shows buttons, gives them functions -->
     <p><button class = "button button1" formaction = "/bin_encrypt">Encrypt</button><button class = "button button2" formaction = "/bin_decrypt">Decrypt</button></p>
 
+    <p>The result is: </p>
 
     <!-- output -->
     <p class="output">{{ display }}</p>
+
 
 </form>
 {% endblock %}
