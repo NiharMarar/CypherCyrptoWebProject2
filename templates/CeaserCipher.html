@@ -2,7 +2,7 @@
 <html>
     <head>
     <meta charset="UTF=8">
-    <title>Ceaser Cipher</title>
+    <title>Caesar Cipher</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body style="background-color: Aqua;">
@@ -12,15 +12,22 @@
     <!-- incorporates the links in the navbar -->
     {% block content %}
 
-    <header> Nihar Marar, Tyler Cloutier, Dylan Roman, Anthony Giustiniano, Cherry Ding</header>
-    <a href="https://repl.it/@1846292/CipherCrypto" target="_blank">Here is the code for the game!</a>
+    <header> Nihar Marar, Tyler Cloutier, Dylan Roman, Anthony Giustiniano, Yanqiao(Cherry) Ding</header>
+    <a href="https://repl.it/@1846292/CipherCrypto" target="_blank">Here is the Python(Repl.it) code for the game!</a>
     <br/>
-    <h1>Ceaser Cipher</h1>
-    <p>This is a <b><i>Ceaser Cipher</i></b> Encryption/Decryption Game!</p>
+    <a href="https://github.com/NiharMarar/CypherCyrptoWebProject2" target="_blank">Here is our Github</a>
+    <br/>
+    <h1 style="text-align:center">Caesar Cipher</h1>
+    <p>This is a <b><i>Caesar Cipher</i></b> Encryption/Decryption Game!</p>
     <p style="color: red;">This game has two options, <b><i>Encrypt</i></b> Messages, or <b><i>Decrypt</i></b> Messages.</p>
-    <img width="800" height="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1200px-Caesar_cipher_left_shift_of_3.svg.png" alt="A picture of the Ceaser Cipher" />
+    <img width="800" height="500" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1200px-Caesar_cipher_left_shift_of_3.svg.png" alt="A picture of the Caesar Cipher" class = "center"/>
+    <h1 style="text-align:center">A picture of the concept of the Caesar Cipher</h1>
     <br/>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="800" height="500" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center"></iframe>
+    <h1 style="text-align:center">A video about the Caesar Cipher</h1>
+    <br/>
+    <img width="800" height="500" src="https://howtodoright.com/wp-content/uploads/2019/02/jcaesar-bust-001.jpg" alt="A picture of Julius Caesar, the creator of the Caesar Cipher which was named after him." class = "center"/>
+    <h1 style="text-align:center">A picture of Julius Caesar himself</h1>
     <style>
 body {background-color: pink;}
     h1 {color: blue;}
@@ -44,10 +51,11 @@ body {background-color: pink;}
      }
 
      .button1 {
-        background-color: #DC143C;
+        background-color: #0000FF;
      }
      .button2 {
-        background-color: #20B2AA;
+        background-color: #DC143C
+;
      }
 
      .center {
@@ -72,14 +80,26 @@ body {background-color: pink;}
      }
     </style>
     <br/>
-    <br/>
+    <p>Here, you can encrypt or decrypt a message using the Caesar Cipher.</p>
+    <p>Here are the steps:</p>
+    <p>1. Take a message you want to encrypt or decrypt and put it into the first(top) textbox.</p>
+    <p>2. Enter in your "S" or shift pattern you would like to apply to your message into the second(bottom) textbox.</p>
+    <p>3. Lastly, select the encrypt or decrypt button and your new message will be below.</p>
+    <p>There are a couple rules:</p>
+    <p>1. DO NOT use special characters such as !@#$%^&*()_+, etc. You can only encrypt/decrypt uppercase/lowercase letters.</p>
+    <p>2. DO NOT press the wrong button when encrypting or decrypting. (EX: Don't press the decrypt button when you did not put in an encrypted message)</p>
+    <p>3. DO NOT make the message to long as yes you can do however long you want, but it would look much cleaner if it were shorter.</p>
     <form method = "post">
         <!-- user message input -->
+        <h1 style="text-align:center">Input Message:</h1>
         <p><input class="textbox1" name="CeaserCipher1" required> </p>
+        <br/>
+        <h1 style="text-align:center">Input Shift Pattern("S"):</h1>
         <p><input class="textbox2" name="s" required> </p>
         <!-- shows buttons, gives them functions -->
+        <br/>
         <p><button class = "button button1" formaction = "/CeaserCipher_encrypt">Encrypt</button><button class = "button button2" formaction = "/CeaserCipher_decrypt">Decrypt</button></p>
-
+        <br/>
         <p>The result is: </p>
         <!-- output -->
         <p class="output">{{ display }}</p>
