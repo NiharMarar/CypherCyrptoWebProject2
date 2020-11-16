@@ -15,10 +15,6 @@
     <header> Nihar Marar, Tyler Cloutier, Dylan Roman, Anthony Giustiniano, Cherry Ding</header>
     <a href="https://repl.it/@1846292/CipherCrypto" target="_blank">Here is the code for the game!</a>
     <br/>
-
-
-
-
     <h1>Ceaser Cipher</h1>
     <p>This is a <b><i>Ceaser Cipher</i></b> Encryption/Decryption Game!</p>
     <p style="color: red;">This game has two options, <b><i>Encrypt</i></b> Messages, or <b><i>Decrypt</i></b> Messages.</p>
@@ -41,8 +37,19 @@
 .button2 {background-color: #008CBA;} /* Blue */
     </style>
     <br/>
-    <button class="button button1">Encrypt</button>
-    <button class="button button2">Decrypt</button>
+    <br/>
+    <form method = "post">
+        <!-- user message input -->
+        <p><input class="textbox1" name="CeaserCipher1" required> </p>
+        <p><input class="textbox2" name="s" required> </p>
+        <!-- shows buttons, gives them functions -->
+        <p><button class = "button button1" formaction = "/CeaserCipher_encrypt">Encrypt</button><button class = "button button2" formaction = "/CeaserCipher_decrypt">Decrypt</button></p>
+
+
+        <!-- output -->
+        <p class="output">{{ display }}</p>
+
+    </form>
     {% endblock %}
     </body>
 </html>
