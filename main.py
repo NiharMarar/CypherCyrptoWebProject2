@@ -99,15 +99,13 @@ def encryptionCC():
 #runs CeaserCipher Game decryption
 @app.route("/CeaserCipher_decrypt", methods=['GET','POST'])
 def decryptionCC():
+
     if request.method == 'POST':
         form = request.form
-        print("Decryption")
+        encrp_msg = form["CeaserCipher1"]
+        decrp_key = int(form["s"])
 
-        print("Message can only be Lower or Uppercase alphabet")
-        encrp_msg = input("Enter encrypted Text: ")
-        decrp_key = int(input("Enter key(0-25): "))
-
-        decrypted_text = ""
+        decrypted_text = []
 
         for i in range(len(encrp_msg)):
             if ord(encrp_msg[i]) == 32:
@@ -125,8 +123,8 @@ def decryptionCC():
             else:
                 decrypted_text += chr(ord(encrp_msg[i]) - decrp_key)
 
-            print("Decrypted Text: " + decrypted_text)
-        return render_template("CeaserCipher.html", display = string)
+        decrypted="".join(decrypted_text)
+        return render_template("CeaserCipher.html", display = decrypted)
     return redirect("/CeaserCipher")
 #------------------------------------------------------------------------------------------------------------
 #runs Binary Game encryption
