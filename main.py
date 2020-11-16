@@ -127,7 +127,7 @@ def decryptionCC():
         return render_template("CeaserCipher.html", display = decrypted)
     return redirect("/CeaserCipher")
 #------------------------------------------------------------------------------------------------------------
-#runs Binary Game encryption
+#runs Binary Cipher encryption
 @app.route("/bin_encrypt", methods=['GET','POST'])
 def encryption():
     if request.method == 'POST':
@@ -137,7 +137,7 @@ def encryption():
         return render_template("Binary.html", display = result)
     return redirect("/binary")
 
-#runs Binary Game decryption
+#runs Binary Cipher decryption
 @app.route("/bin_decrypt", methods=['GET','POST'])
 def decryption():
     if request.method == 'POST':
