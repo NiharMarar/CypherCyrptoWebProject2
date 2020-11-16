@@ -7,10 +7,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <!-- creates the looks of the buttons -->
     <style>
-    body {background-color: pink;}
+    body {
+            background-image: url(https://images.unsplash.com/photo-1504293538349-0be9a181d474?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+        }
+}
     h1 {color: blue;}
     p {
-        color: purple;
+        color: mediumspringgreen;
         font-size: 150%}
 
     .button {
@@ -55,7 +58,7 @@
     </style>
 
 </head>
-<body style = "background-color: Plum;">
+<body >
 
 <!-- brings in navbar from base.html -->
 {% extends "base.html" %}
