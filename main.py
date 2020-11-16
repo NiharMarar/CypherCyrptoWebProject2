@@ -30,11 +30,6 @@ def Binary_to_Text(binary):
 def home():
     return render_template("homepage.html")
 
-#binary game
-@app.route('/binary')
-def binaryEX():
-    return render_template("Binary.html", links = links)
-
 #rsa demonstration
 #default RSA (rsa encrypt)
 @app.route ("/rsa", methods = ["POST", "GET"])
@@ -126,7 +121,17 @@ def decryptionCC():
         decrypted="".join(decrypted_text)
         return render_template("CeaserCipher.html", display = decrypted)
     return redirect("/CeaserCipher")
+
+#Caesar Cipher Information Page
+@app.route('/CaesarCipherInfo')
+def CaesarCipherInfo():
+    return render_template("CaesarCipherInfo.html", links = links)
 #------------------------------------------------------------------------------------------------------------
+#binary game
+@app.route('/binary')
+def binaryEX():
+    return render_template("Binary.html", links = links)
+
 #runs Binary Cipher encryption
 @app.route("/bin_encrypt", methods=['GET','POST'])
 def encryption():
