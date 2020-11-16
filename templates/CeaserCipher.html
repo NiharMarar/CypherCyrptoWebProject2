@@ -22,19 +22,54 @@
     <br/>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <style>
-.button {
-  border: none;
-  color: cyan;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button1 {background-color: #4CAF50;} /* Green */
-.button2 {background-color: #008CBA;} /* Blue */
+body {background-color: pink;}
+    h1 {color: blue;}
+    p {
+        color: purple;
+        font-size: 150%}
+
+    .button {
+        border: 1px solid black;
+         color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .button1 {
+        background-color: #DC143C;
+     }
+     .button2 {
+        background-color: #20B2AA;
+     }
+
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .textbox1 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+     .textbox2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     .output {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
     </style>
     <br/>
     <br/>
@@ -45,7 +80,7 @@
         <!-- shows buttons, gives them functions -->
         <p><button class = "button button1" formaction = "/CeaserCipher_encrypt">Encrypt</button><button class = "button button2" formaction = "/CeaserCipher_decrypt">Decrypt</button></p>
 
-
+        <p>The result is: </p>
         <!-- output -->
         <p class="output">{{ display }}</p>
 
