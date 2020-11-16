@@ -16,8 +16,6 @@ def euclidean(x, y):
 def invMod(x, mod):
     gcd, a, b = euclidean(x, mod)
     #Mod DNE
-    if gcd != 1:
-        raise Exception('Modular Inverse DNE')
     return a % mod
 
 #Prime Number Checker

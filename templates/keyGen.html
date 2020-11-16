@@ -26,7 +26,7 @@
             padding-top: 20px;
             padding-bottom: 20px;
             width: 300px;
-            height: 700px;
+            height: 800px;
         }
 
         .mainHead {
@@ -92,21 +92,21 @@
 {% block content %}
 
 <div class = "main">
-    <p class = "mainHead">{{ page }}</p>
+    <p class = "mainHead">Key Generator</p>
     <form class = "demo" action = "#" method = "post">
         <!-- message -->
         <p class = "textB">Message: </p>
         <p><input class = "text" type = "text" name = "msg" /></p>
-        <!-- public key 1 -->
-        <p class = "textB">{{ key1 }} </p>
-        <p><input class = "text" type = "text" name = "pubKey1" /></p>
-        <!-- public key 2 -->
-        <p class = "textB">{{ key2 }}</p>
-        <p><input class = "text" type = "text" name = "pubKey2" /></p>
         <p><input type = "submit" value = "submit" /></p>
         <!-- encrypted message -->
-        <p class = "textB"> {{ outputDisplay }} </p>
+        <p class = "textB">{{ display }}</p>
         <p class = "output text">{{ output }}</p>
+        <p class = "textB">{{ display1 }}</p>
+        <p class = "output text">{{ pubKey1 }}</p>
+        <p class = "textB">{{ display2 }}</p>
+        <p class = "output text">{{ pubKey2 }}</p>
+        <p class = "textB">{{ display3 }}</p>
+        <p class = "output text">{{ privKey }}</p>
     </form>
     <p class = "subHead">Other Pages</p>
     <a class = "link" href = "{{ link1 }}"> {{ op1 }} </a>
