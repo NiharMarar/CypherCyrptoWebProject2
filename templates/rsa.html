@@ -5,6 +5,54 @@
     <title>Cipher Crypto RSA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+    <style>
+        body {
+            background-image: url(https://www.teahub.io/photos/full/316-3163737_neon-city-wallpaper-4k.jpg);
+        }
+
+        .demo {
+            text-align: center;
+        }
+
+        .main {
+            background-color: #fff;
+            margin-top: 300px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 100px;
+        }
+
+        .list {
+            display: block;
+            color: grey;
+        }
+
+        .link{
+            display: block;
+            text-align: center;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Trebuchet MS";
+        }
+
+        .link:hover{
+            color: #b0b0b0;
+            text-decoration: none;
+        }
+
+        .text {
+        font-size: 20px;
+        font-family: "Trebuchet MS";
+        }
+
+        .textB {
+        font-size: 25px;
+        font-family: "Trebuchet MS";
+        font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,22 +61,27 @@
 
 <!-- rsa page content -->
 {% block content %}
-<form action = "#" method = "post">
-    <!-- message -->
-    <p>Message: </p>
-    <p><input type = "text" name = "msg" /></p>
-    <!-- public key 1 -->
-    <p>Public Key 1: </p>
-    <p><input type = "text" name = "pubKey1" /></p>
-    <!-- public key 2 -->
-    <p>Public Key 2</p>
-    <p><input type = "text" name = "pubKey2" /></p>
-    <p><input type = "submit" value = "submit" /></p>
-    <!-- encrypted message -->
-    <p>Encrypted: </p>
-    <p class = output>{{ output }}</p>
 
-</form>
+<div class = "container main">
+    <a class = "link" href = "#"> {{ op1 }} </a>
+    <a class = "link" href = "#"> {{ op2 }} </a>
+    <form class = "demo" action = "#" method = "post">
+        <!-- message -->
+        <p class = "textB">Message: </p>
+        <p><input class = "text" type = "text" name = "msg" /></p>
+        <!-- public key 1 -->
+        <p class = "textB">Public Key 1: </p>
+        <p><input class = "text" type = "text" name = "pubKey1" /></p>
+        <!-- public key 2 -->
+        <p class = "textB">Public Key 2</p>
+        <p><input class = "text" type = "text" name = "pubKey2" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+        <!-- encrypted message -->
+        <p class = "textB">Encrypted: </p>
+        <p class = "output text">{{ output }}</p>
+    </form>
+</div>
+
 {% endblock %}
 
 </body>
