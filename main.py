@@ -29,32 +29,6 @@ def Binary_to_Text(binary):
 def home():
     return render_template("homepage.html")
 
-#rsa demonstration
-#default RSA (rsa encrypt)
-@app.route ("/rsa", methods = ["POST", "GET"])
-def rsaEncrypt ():
-    if request.method == "POST":
-        #get message
-        message = request.form["msg"]
-        #get keys
-        pubKey1 = int(request.form["pubKey1"])
-        pubKey2 = int(request.form["pubKey2"])
-        #get encrypted and make into useable output
-        encrypted = rsa.rsa(message, pubKey1, pubKey2)
-        encrypted = encrypted[0]
-        encrypted = ''.join(encrypted)
-        #render page with output
-        return render_template ("rsa.html", output = encrypted, op1 = "KeyGenerator", op2 = "Decrypt")
-    #render page without output
-    else:
-        return render_template ("rsa.html", output = "pending", op1 = "KeyGenerator", op2 = "Decrypt")
-
-
-#rsa info
-@app.route('/rsa/about')
-def rsaAbout():
-    return render_template("rsaAbout.html")
-
 #CeaserCipher game
 @app.route('/CeaserCipher')
 def CeaserCipher():
@@ -159,6 +133,69 @@ def decryption():
 @app.route("/BinaryInfo")
 def BinaryInfo():
     return render_template("BinInfo.html")
+
+#rsa demonstration
+#default RSA (rsa encrypt)
+@app.route ("/rsa", methods = ["POST", "GET"])
+def rsaEncrypt ():
+    if request.method == "POST":
+        #get message
+        message = request.form["msg"]
+        #get keys
+        pubKey1 = int(request.form["iKey1"])
+        pubKey2 = int(request.form["iKey2"])
+        #get encrypted and make into useable output
+        encrypted = rsa.rsa(message, pubKey1, pubKey2)
+        encrypted = encrypted[0]
+        encrypted = ''.join(encrypted)
+        #render page with output
+        return render_template ("rsa.html", key1 = "Public Key 1", key2 = "Public Key 2", outputDisplay = "Encrypted", encrypted = "Encrypted: ", output = encrypted, page = "Encrypt", op1 = "KeyGenerator", op2 = "Decrypt", link1 = "rsa/key-generator", link2 = "rsa/decrypt")
+    #render page without output
+    else:
+        return render_template ("rsa.html", page = "Encrypt", key1 = "Public Key 1", key2 = "Public Key 2", op1 = "Key Generator", op2 = "Decrypt", link1 = "rsa/key-generator", link2 = "rsa/decrypt")
+
+#rsa key generator
+@app.route('/rsa/key-generator', methods = ["POST", "GET"])
+def rsaKeyGen():
+    if request.method == "POST":
+        #get message
+        message = request.form["msg"]
+        #generate keys
+        keys = rsa.keyGen()
+        pubKey1 = keys[0]
+        pubKey2 = keys[1]
+        privKey = keys[2]
+        #encrypt message
+        encrypted = rsa.rsa(message, pubKey1, pubKey2)
+        encrypted = encrypted[0]
+        encrypted = ''.join(encrypted)
+        return render_template ("keyGen.html", display = "Encrypted", display1 = "Public Key 1", display2 = "Public Key 2", display3 = "Private Key", output = encrypted, pubKey1 = pubKey1, pubKey2 = pubKey2, privKey = privKey, op1 = "Encrypt", op2 = "Decrypt", link1 = "/rsa", link2 = "/rsa/decrypt")
+    else:
+        return render_template ("keyGen.html", op1 = "Encrypt", op2 = "Decrypt", link1 = "/rsa", link2 = "/rsa/decrypt")
+
+#rsa decrypt
+@app.route ('/rsa/decrypt', methods = ["POST", "GET"])
+def rsaDecrypt():
+    if request.method == "POST":
+        #get message
+        #get message
+        message = request.form["msg"]
+        #get keys
+        pubKey1 = int(request.form["iKey1"])
+        privKey = int(request.form["iKey2"])
+        #get encrypted and make into useable output
+        decrypted = rsa.rsa(message, pubKey1, privKey)
+        decrypted = decrypted[0]
+        decrypted = ''.join(decrypted)
+        #render page with output
+        return render_template ("rsa.html", page = "Decrypt", key1 = "Public Key 1", key2 = "Private Key", op1 = "Encrypt", op2 = "Key Generator", link1 = "/rsa", link2 = "key-generator", outputDisplay = "Decrypted", output = decrypted)
+    else:
+        return render_template ("rsa.html", page = "Decrypt", key1 = "Public Key 1", key2 = "Private Key", op1 = "Encrypt", op2 = "Key Generator", link1 = "/rsa", link2 = "key-generator")
+
+#rsa info
+@app.route('/rsa/about')
+def rsaAbout():
+    return render_template("rsaAbout.html")
 
 #run file
 if __name__ == "__main__":
