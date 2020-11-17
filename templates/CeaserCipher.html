@@ -5,32 +5,31 @@
     <title>Caesar Cipher</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
-    <body style="background-color: Aqua;">
+    <body style="background-color:aqua;">
     <!-- brings in navbar from base.html -->
     {% extends "base.html" %}
 
     <!-- incorporates the links in the navbar -->
     {% block content %}
 
-    <header> Nihar Marar, Tyler Cloutier, Dylan Roman, Anthony Giustiniano, Yanqiao(Cherry) Ding</header>
-    <a href="https://repl.it/@1846292/CipherCrypto" target="_blank">Here is the Python(Repl.it) code for the game!</a>
-    <br/>
-    <a href="https://github.com/NiharMarar/CypherCyrptoWebProject2" target="_blank">Here is our Github</a>
-    <br/>
-    <h1 style="text-align:center">Caesar Cipher</h1>
-    <p>This is a <b><i>Caesar Cipher</i></b> Encryption/Decryption Game!</p>
-    <p style="color: red;">This game has two options, <b><i>Encrypt</i></b> Messages, or <b><i>Decrypt</i></b> Messages.</p>
-    <img width="800" height="500" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1200px-Caesar_cipher_left_shift_of_3.svg.png" alt="A picture of the Caesar Cipher" class = "center"/>
-    <h1 style="text-align:center">A picture of the concept of the Caesar Cipher</h1>
-    <br/>
-    <iframe width="800" height="500" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center"></iframe>
-    <h1 style="text-align:center">A video about the Caesar Cipher</h1>
-    <br/>
-    <img width="800" height="500" src="https://howtodoright.com/wp-content/uploads/2019/02/jcaesar-bust-001.jpg" alt="A picture of Julius Caesar, the creator of the Caesar Cipher which was named after him." class = "center"/>
-    <h1 style="text-align:center">A picture of Julius Caesar himself</h1>
     <style>
-body {background-color: pink;}
-    h1 {color: blue;}
+    body {
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-tall-on-atmosphere-black-gold-poster-background-and-luxuriousatmosphereblackhigh-gradelineround-image_50207.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+        }
+}
+h1 {
+  color: green;
+}
+h1 {
+  text-align: center;
+}
+h {
+  text-align: center;
+}
+
+h {
+        color: aqua;
+        font-size: 250%}
     p {
         color: purple;
         font-size: 150%}
@@ -80,6 +79,20 @@ body {background-color: pink;}
      }
     </style>
     <br/>
+    <br/>
+    <h1 style="color: red;">Caesar Cipher</h1>
+    <p style="color: yellow;">This is a <b><i>Caesar Cipher</i></b> Encryption/Decryption Game!</p>
+    <p style="color: yellow;">This game has two options, <b><i>Encrypt</i></b> Messages, or <b><i>Decrypt</i></b> Messages.</p>
+    <img width="800" height="500" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1200px-Caesar_cipher_left_shift_of_3.svg.png" alt="A picture of the Caesar Cipher" class = "center"/>
+    <h1 style="color: red;">A picture of the concept of the Caesar Cipher</h1>
+    <br/>
+    <iframe width="800" height="500" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center"></iframe>
+    <h1 style="color: red;">A video about the Caesar Cipher</h1>
+    <br/>
+    <img width="800" height="500" src="https://howtodoright.com/wp-content/uploads/2019/02/jcaesar-bust-001.jpg" alt="A picture of Julius Caesar, the creator of the Caesar Cipher which was named after him." class = "center"/>
+    <h1 style="color: red;">A picture of Julius Caesar himself</h1>
+    <br/>
+    <br/>
     <p>Here, you can encrypt or decrypt a message using the Caesar Cipher.</p>
     <p>Here are the steps:</p>
     <p>1. Take a message you want to encrypt or decrypt and put it into the first(top) textbox.</p>
@@ -91,10 +104,10 @@ body {background-color: pink;}
     <p>3. DO NOT make the message to long as yes you can do however long you want, but it would look much cleaner if it were shorter.</p>
     <form method = "post">
         <!-- user message input -->
-        <h1 style="text-align:center">Input Message:</h1>
+        <h1 style="color: red;">Input Message:</h1>
         <p><input class="textbox1" name="CeaserCipher1" required> </p>
         <br/>
-        <h1 style="text-align:center">Input Shift Pattern("S"):</h1>
+        <h1 style="color: red;">Input Shift Pattern("S"):</h1>
         <p><input class="textbox2" name="s" required> </p>
         <!-- shows buttons, gives them functions -->
         <br/>
