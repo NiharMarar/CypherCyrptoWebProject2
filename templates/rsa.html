@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cipher Crypto RSA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+    <style>
+        body {
+            background-image: url(https://www.teahub.io/photos/full/316-3163737_neon-city-wallpaper-4k.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-bottom: 100px;
+        }
+
+        .demo {
+            text-align: center;
+        }
+
+        .main {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            margin-top: 2%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 300px;
+            height: 700px;
+        }
+
+        .mainHead {
+            display: block;
+            text-align: center;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Trebuchet MS";
+        }
+
+        .subHead {
+            display: block;
+            text-align: center;
+            color: #000;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Trebuchet MS";
+        }
+
+        .list {
+            display: block;
+            color: grey;
+        }
+
+        .link{
+            display: block;
+            text-align: center;
+            background-color: #a3a3a3;
+            margin: 2px;
+            color: #000;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "Trebuchet MS";
+        }
+
+        .link:hover{
+            color: #ffabab;
+            text-decoration: none;
+        }
+
+        .text {
+        font-size: 20px;
+        font-family: "Trebuchet MS";
+        }
+
+        .textB {
+        font-size: 25px;
+        font-family: "Trebuchet MS";
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- loads base.html template -->
+{% extends "base.html" %}
+
+<!-- rsa page content -->
+{% block content %}
+
+<div class = "main">
+    <p class = "mainHead">{{ page }}</p>
+    <form class = "demo" action = "#" method = "post">
+        <!-- message -->
+        <p class = "textB">Message: </p>
+        <p><input class = "text" type = "text" name = "msg" /></p>
+        <!-- public key 1 -->
+        <p class = "textB">{{ key1 }} </p>
+        <p><input class = "text" type = "text" name = "iKey1" /></p>
+        <!-- public key 2 -->
+        <p class = "textB">{{ key2 }}</p>
+        <p><input class = "text" type = "text" name = "iKey2" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+        <!-- encrypted message -->
+        <p class = "textB"> {{ outputDisplay }} </p>
+        <p class = "output text">{{ output }}</p>
+    </form>
+    <p class = "subHead">Other Pages</p>
+    <a class = "link" href = "{{ link1 }}"> {{ op1 }} </a>
+    <a class = "link" href = "{{ link2 }}"> {{ op2 }} </a>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

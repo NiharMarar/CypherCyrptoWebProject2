@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF=8">
+    <title>Caesar Cipher</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body style="background-color:aqua;">
+    <!-- brings in navbar from base.html -->
+    {% extends "base.html" %}
+
+    <!-- incorporates the links in the navbar -->
+    {% block content %}
+
+    <style>
+    body {
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20190222/ourmid/pngtree-tall-on-atmosphere-black-gold-poster-background-and-luxuriousatmosphereblackhigh-gradelineround-image_50207.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+
+       background-size: cover;
+            background-repeat: no-repeat;
+ }
+
+
+h1 {
+  color: green;
+}
+h1 {
+  text-align: center;
+}
+h {
+  text-align: center;
+}
+
+h {
+        color: aqua;
+        font-size: 250%}
+    p {
+        color: purple;
+        font-size: 150%}
+
+    .button {
+        border: 1px solid black;
+         color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .button1 {
+        background-color: #0000FF;
+     }
+     .button2 {
+        background-color: #DC143C
+;
+     }
+
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .textbox1 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+     .textbox2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     .output {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+    </style>
+    <br/>
+    <br/>
+    <h1 style="color: red;">Caesar Cipher</h1>
+    <p style="color: yellow;">This is a <b><i>Caesar Cipher</i></b> Encryption/Decryption Game!</p>
+    <p style="color: yellow;">This game has two options, <b><i>Encrypt</i></b> Messages, or <b><i>Decrypt</i></b> Messages.</p>
+    <img width="800" height="500" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/1200px-Caesar_cipher_left_shift_of_3.svg.png" alt="A picture of the Caesar Cipher" class = "center"/>
+    <h1 style="color: red;">A picture of the concept of the Caesar Cipher</h1>
+    <br/>
+    <iframe width="800" height="500" src="https://www.youtube.com/embed/o6TPx1Co_wg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center"></iframe>
+    <h1 style="color: red;">A video about the Caesar Cipher</h1>
+    <br/>
+    <img width="800" height="500" src="https://howtodoright.com/wp-content/uploads/2019/02/jcaesar-bust-001.jpg" alt="A picture of Julius Caesar, the creator of the Caesar Cipher which was named after him." class = "center"/>
+    <h1 style="color: red;">A picture of Julius Caesar himself</h1>
+    <br/>
+    <br/>
+    <p>Here, you can encrypt or decrypt a message using the Caesar Cipher.</p>
+    <p>Here are the steps:</p>
+    <p>1. Take a message you want to encrypt or decrypt and put it into the first(top) textbox.</p>
+    <p>2. Enter in your "S" or shift pattern you would like to apply to your message into the second(bottom) textbox.</p>
+    <p>3. Lastly, select the encrypt or decrypt button and your new message will be below.</p>
+    <p>There are a couple rules:</p>
+    <p>1. DO NOT use special characters such as !@#$%^&*()_+, etc. You can only encrypt/decrypt uppercase/lowercase letters.</p>
+    <p>2. DO NOT press the wrong button when encrypting or decrypting. (EX: Don't press the decrypt button when you did not put in an encrypted message)</p>
+    <p>3. DO NOT make the message to long as yes you can do however long you want, but it would look much cleaner if it were shorter.</p>
+    <form method = "post">
+        <!-- user message input -->
+        <h1 style="color: red;">Input Message:</h1>
+        <p><input class="textbox1" name="CeaserCipher1" required> </p>
+        <br/>
+        <h1 style="color: red;">Input Shift Pattern("S"):</h1>
+        <p><input class="textbox2" name="s" required> </p>
+        <!-- shows buttons, gives them functions -->
+        <br/>
+        <p><button class = "button button1" formaction = "/CeaserCipher_encrypt">Encrypt</button><button class = "button button2" formaction = "/CeaserCipher_decrypt">Decrypt</button></p>
+        <br/>
+        <p>The result is: </p>
+        <!-- output -->
+        <p class="output">{{ display }}</p>
+
+    </form>
+    {% endblock %}
+    </body>
+</html>
